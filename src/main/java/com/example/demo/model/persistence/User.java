@@ -24,9 +24,6 @@ public class User {
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private String password;
 
-	@Column(nullable = false)
-	@JsonProperty(access = Access.WRITE_ONLY)
-	private String confirmPassword;
 	
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cart_id", referencedColumnName = "id")
@@ -65,12 +62,5 @@ public class User {
 		this.password = password;
 	}
 
-	public String getConfirmPassword() {
-		return confirmPassword;
-	}
-
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
-	}
 
 }
